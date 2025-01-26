@@ -9,6 +9,7 @@ type Pet struct {
 	Name      string
 	Status    string
 	PhotoUrls []PhotoUrl
+	Tags      []Tag
 }
 
 type PhotoUrl struct {
