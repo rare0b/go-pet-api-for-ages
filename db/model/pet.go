@@ -16,7 +16,7 @@ type Pet struct {
 type Category struct {
 	gorm.Model
 	PetId uint
-	Name  string
+	Name  string `gorm:"uniqueIndex"`
 }
 
 type PhotoUrl struct {
@@ -28,5 +28,5 @@ type PhotoUrl struct {
 type Tag struct {
 	gorm.Model
 	PetId uint
-	Name  string
+	Name  string `gorm:"uniqueIndex"`
 }
