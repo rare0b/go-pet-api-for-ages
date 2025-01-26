@@ -6,10 +6,17 @@ import (
 
 type Pet struct {
 	gorm.Model
-	Name      string
-	Status    string
-	PhotoUrls []PhotoUrl
-	Tags      []Tag
+	Name       string
+	Status     string
+	Categories []Category
+	PhotoUrls  []PhotoUrl
+	Tags       []Tag
+}
+
+type Category struct {
+	gorm.Model
+	PetId uint
+	Name  string
 }
 
 type PhotoUrl struct {
