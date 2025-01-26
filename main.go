@@ -11,7 +11,7 @@ func main() {
 		panic("failed to connect database")
 	}
 
-	db.AutoMigrate(&Pet{}, &PhotoURL{}, &Tag{})
+	db.AutoMigrate(&Pet{}, &Category{}, &PhotoURL{}, &Tag{})
 
-	db.Create(&Pet{Name: "Goma Shiba", Status: "available", PhotoURLs: []PhotoURL{"https://example.com/", "https://example.com/"}, Tags: []Tag{"Inu", "Shiba"}})
+	db.Create(&Pet{Name: "Goma Shiba", Status: "available", Category: Category{"Inu"}, PhotoURLs: []PhotoURL{"https://example.com/", "https://example.com/"}, Tags: []Tag{"Shiba", "Nihonken"}})
 }

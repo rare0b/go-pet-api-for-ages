@@ -8,7 +8,7 @@ type Pet struct {
 	gorm.Model
 	Name       string
 	Status     string
-	Categories []Category `gorm:"many2many:user_categories;"`
+	CategoryID uint
 	PhotoURLs  []PhotoURL
 	Tags       []Tag `gorm:"many2many:user_tags;"`
 }
@@ -16,11 +16,12 @@ type Pet struct {
 type Category struct {
 	gorm.Model
 	Name string `gorm:"uniqueIndex"`
+	Pets []Pet
 }
 
 type PhotoURL struct {
 	gorm.Model
-	PetId uint
+	PetID uint
 	URL   string
 }
 
